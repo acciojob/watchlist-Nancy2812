@@ -56,9 +56,23 @@ public class MovieService {
         }
         return null;
     }
+
     public List<String> getDirectorMovieByName(String director) {
         return movieRepo.getMoviesByDirector(director);
 
+    }
+    public void deleteDirectorByName(String name) {
+        List<String>l =new ArrayList<>();
+            l= movieRepo.Pair.get(name);
+
+        for(int i=0;i< l.size();i++){
+            movieRepo.deleteMovieByName(l.get(i));
+        }
+        movieRepo.deleteDirectorByName(name);
+    }
+
+    public void DeleteAllDirectors() {
+        movieRepo.deleteAllDiretorsAndMovies();
     }
 
 

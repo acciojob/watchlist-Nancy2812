@@ -28,6 +28,33 @@ public class MovieRepository {
     public List<Director> getDirector() {
         return directorL;
     }
+    public void deleteMovieByName(String name) {
+        int num = movieL.indexOf(name);
+        movieL.remove(num);
+
+
+    }
+
+    public void deleteDirectorByName(String name) {
+        int num = directorL.indexOf(name);
+        directorL.remove(num);
+
+
+    }
+
+    public void deleteAllDiretorsAndMovies() {
+        for(String name :Pair.keySet()){
+            List<String> l=new ArrayList<>();
+            l = Pair.get(name);
+            for(String s : l){
+                this.deleteMovieByName(s);
+            }
+            deleteDirectorByName(name);
+
+            Pair.remove(name);
+        }
+
+    }
 
 
 
