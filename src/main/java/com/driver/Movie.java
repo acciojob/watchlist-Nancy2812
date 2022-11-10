@@ -1,12 +1,20 @@
 package com.driver;
 
-public class Movie {
-    String name;
-    int durationInMinutes;
-    double imdbRating;
 
-    public Movie() {
-    }
+import org.springframework.web.bind.annotation.RestController;
+
+import java.security.PrivateKey;
+
+
+public class Movie {
+    public String name;
+
+
+    public int durationInMinutes;
+
+
+    public double imdbRating;
+
 
     public Movie(String name, int durationInMinutes, double imdbRating) {
         this.name = name;
